@@ -1,3 +1,5 @@
+
+//方法一：
 class Solution {
    public String gcdOfStrings(String str1, String str2) {
       if (!(str1 + str2).equals(str2 + str1)) {
@@ -12,4 +14,14 @@ class Solution {
     } 
 }
 
+//方法二：
+import java.math.BigInteger;
 
+class Solution {
+    public String gcdOfStrings(String str1, String str2) {
+        if (!(str1 + str2).equals(str2 + str1)) {
+            return "";
+        } 
+        return str1.substring(0,Integer.valueOf(new BigInteger(str1.length()+"").gcd(new BigInteger( str2.length()+"")).toString()));
+    }  
+}
